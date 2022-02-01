@@ -17,7 +17,7 @@ You've been hired to create a Game Review app. It will have a React client and R
         solution 
       </summary>
       <hr/>
-         <img src="assets/valid_game.png"
+         <img src="assets/valid_price.png"
         alt="valid game"
         style="margin-right: 10px;" />
       <hr/>
