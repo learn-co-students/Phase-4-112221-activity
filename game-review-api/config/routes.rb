@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   # resources :reviews
-  resources :users
-  resources :games, only: [:index]
+  resources :users, only: [:create]
+  resources :games, only: [:index, :show]
 end

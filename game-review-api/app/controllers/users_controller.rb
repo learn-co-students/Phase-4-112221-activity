@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+   
  def create
     user = User.create(user_params)
     render json: user, status: :created 
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
  private
  
  def user_params
-    params.permit(:name)
+    params.permit(:id, :username)
  end 
+
 end
