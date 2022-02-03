@@ -1,47 +1,51 @@
 # Phase-4-112221-activity
 
-
-
 # Deliverables
 Create a rails app 
 
->Note: if you get stuck review Rails Resource Routing: Update and Rails Resource Routing: Destroy
+>Note: if you get stuck review Active Model Serializer
 
 You've been hired to create a Game Review app. It will have a React client and Rails api. 
 
-
-
-1. Using the model and controller you worked on yesterday build out the destroy action. The destroy action should return a 204 :no_content and should handle :not_found errors. Test out your route with postman.
+1. Add Active Model Serializer to the gemfile and bundle.
  <details>
       <summary>
         solution 
       </summary>
       <hr/>
-         <img src="assets/user_destroy_route.png"
-        alt="destroy route"
-        style="margin-right: 10px;" />
-      <hr/>
-       <img src="assets/user_destroy_action.png"
-        alt="destroy action"
+         <img src="assets/gem_AMS.png"
+        alt="gem ams"
         style="margin-right: 10px;" />
       <hr/>
  </details>
 
-2. Build out the update action. The update action should use strong params, return the updated resource and handel errors. Test out your route with postman.
+2. Generate a serializer for every model.
 
  <details>
       <summary>
         solution 
       </summary>
       <hr/>
-      <img src="assets/user_update_route.png"
-        alt="update route"
-        style="margin-right: 10px;" />
-        <img src="assets/user_update_action.png"
-        alt="update action"
-        style="margin-right: 10px;" />
+      rails g serializer game
+      </br>
+      rails g serializer review
+        </br>
+      rails g serializer user
       <hr/>
  </details>
 
-Bonus
-3. Build out the rest of CRUD for the remaining controllers 
+
+3. Customize each serializer.
+  - Add specific attributes, exclude things like id  created_at.
+  - Add at least one customized attribute, for example format price to have a $ and two decimal points 
+  - Add an association, use has_many or belongs_to to add one of the associated values. 
+  - Test your serializer with the browser or postman. If you haven't already done so, add the index/show action to the controller of the model your testing.
+
+   <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+      <img src="assets/game_serializer.png" alt="game serializer" style="margin-right: 10px;" />
+      <hr/>
+ </details>
