@@ -1,63 +1,25 @@
 # Phase-4-112221-activity
 
 # Deliverables
-Create a rails app 
+Deploy this app!
+> Note: You do not have a client, so you will not need to build out the Proc or Client content.
 
->Note: if you get stuck review Password Protection
+1. This is your last activity, and there is only one Deliverable Deploy this app. 
+Convert your app to PostgreSQL using the steps provided by Heroku. [SQLite on Heroku](https://devcenter.heroku.com/articles/sqlite3) 
 
-You've been hired to create a Game Review app. It will have a React client and Rails api. 
+2. Make sure you have the correct environment set up. `ruby -v` should show 2.7.4 run `gem install bundler` and `gem install rails` to have the latest version of rails and bundler. Make sure PostgreSQL is installed and started  `brew services start postgresql`
 
-1. Configure this app to work with cookies and sessions.
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/middleware.png" alt="middleware" style="margin-right: 10px;" />
-           <img src="assets/include_cookies.png" alt="cookies" style="margin-right: 10px;" />
-      <hr/>
- </details>
+3. Add support for Ubuntu. `bundle lock --add-platform x86_64-linux --add-platform ruby`
 
-2.  Add a login route.
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/login.png" alt="login" style="margin-right: 10px;" />
-      <hr/>
- </details>
+4. Push to Heroku and test out your routes!
+> Note: you may need to git init if you can't add or commit 
+```
+ git add .
+ git commit -m 'Initial commit'
 
+  heroku create
+  git push heroku main
 
-3. Add a sessions controller with a login action that saves the user_id to sessions. Take a moment to use byebug to check out the session hash. Verify you can login using postman.
+  heroku run rails db:migrate db:seed
 
-
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/login_action.png" alt=" login action" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 4. In application controller, create two methods. `current_user`: checks to see if there's a current user in sessions. `authenticate_user`: assures that there is a current user otherwise sends an error, and the status:unauthorized
-
-
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/current_user.png" alt="current_user" style="margin-right: 10px;" />
-      <hr/>
- </details>
-Bonus 
-
-5. Run authenticate_user before every action but login and user.create
-
-6. Create a logout action
-
-7. Log the users failed login attempts in sessions
- 
-
+```
